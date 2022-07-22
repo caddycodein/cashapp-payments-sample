@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Payment page";
+}
+
+<div class="text-center">
+    <div class="col-md-6">
+        <h1 class="display-4">Welcome</h1>
+        <form id="payment-form">
+            <div id="card-container"></div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-dark text-white" id="card-button" type="button">Pay</button>
+                <button class="btn btn-dark text-white" id="ach-button" type="button">Pay with Bank Account</button>
+                @*<button id="apple-pay-button">Apple Pay</button>*@
+                <div id="google-pay-button"></div>
+                <div id="afterpay-button"></div>
+                <div id="cash-app-pay"></div>
+            </div>
+        </form>
+    </div>
+</div>

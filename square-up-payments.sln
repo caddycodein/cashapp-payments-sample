@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "square-up-payments", "square-up-payments.csproj", "{B7DFA1D1-4DA3-4086-ADEE-66D1244C4620}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BE610EF2-50CD-41D6-AF7F-32E828E12577}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A32636AF-9A92-46FE-AF90-A09F2FD4E742}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7DFA1D1-4DA3-4086-ADEE-66D1244C4620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7DFA1D1-4DA3-4086-ADEE-66D1244C4620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7DFA1D1-4DA3-4086-ADEE-66D1244C4620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7DFA1D1-4DA3-4086-ADEE-66D1244C4620}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7DFA1D1-4DA3-4086-ADEE-66D1244C4620} = {BE610EF2-50CD-41D6-AF7F-32E828E12577}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2B59C4B-0A20-4C04-86BE-44DAC8B7A7C9}
+	EndGlobalSection
+EndGlobal
