@@ -1,20 +1,45 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using System;
+using System.Threading.Tasks;
 
-namespace square_up_payments.Pages
+using Square;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
+
+namespace squareupwebpayments.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        public string WebPaymentsSdkUrl { get; set; }
+        public string ApplicationId { get; set; }
+        public string LocationId { get; set; }
+        public string Currency { get; set; }
+        public string Country { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        private SquareClient client;
+
+        public IndexModel(Microsoft.Extensions.Configuration.IConfiguration configuration)
         {
-            _logger = logger;
+            var environment = configuration["AppSettings:Environment"] == "sandbox" ?
+                Square.Environment.Sandbox : Square.Environment.Production;
+
+            ApplicationId = configuration["AppSettings:ApplicationId"];
+            LocationId = configuration["AppSettings:LocationId"];
+
+            WebPaymentsSdkUrl = environment == Square.Environment.Sandbox ?
+                "https://sandbox.web.squarecdn.com/v1/square.js" : "https://web.squarecdn.com/v1/square.js";
+
+
+            client = new SquareClient.Builder()
+                .Environment(environment)
+                .AccessToken(configuration["AppSettings:AccessToken"])
+                .Build();
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-
+            var result = await client.LocationsApi.RetrieveLocationAsync(locationId: LocationId);
+            Country = result.Location.Country;
+            Currency = result.Location.Currency;
         }
     }
 }
